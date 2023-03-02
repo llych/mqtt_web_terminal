@@ -23,18 +23,6 @@ func init() {
 
 }
 
-var messagePubHandler mqtt.MessageHandler = func(client mqtt.Client, msg mqtt.Message) {
-	log.Printf("Received message: %s from topic: %s\n", msg.Payload(), msg.Topic())
-}
-
-var connectHandler mqtt.OnConnectHandler = func(client mqtt.Client) {
-	log.Println("Connected")
-}
-
-var connectLostHandler mqtt.ConnectionLostHandler = func(client mqtt.Client, err error) {
-	log.Printf("Connect lost: %v", err)
-}
-
 func main() {
 
 	var (
